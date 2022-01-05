@@ -4,8 +4,6 @@ import { useContext } from "react";
 
 const Transaction = ({ transaction }) => {
   const { DelTransaction } = useContext(TransactionContext);
-  const background =
-    transaction.Amount > 0 ? " hover:bg-green-600 " : " hover:bg-red-600 ";
   const border =
     transaction.Amount > 0 ? " border-green-600 " : " border-red-600 ";
 
@@ -17,7 +15,7 @@ const Transaction = ({ transaction }) => {
       >
         x
       </button>
-      <span className={"p-1 w-full text-left"}>{transaction.Description}</span>
+      <span className="p-1 w-full text-left">{transaction.Description}</span>
       <span className={"p-1 w-full text-right border-r-4" + border}>
         {transaction.Amount}$
       </span>

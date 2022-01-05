@@ -1,26 +1,8 @@
+import { TransactionContext } from "../context/TransactionContext";
+import {useContext} from 'react'
+
 const AccountSummary = () => {
-    const transactions = [
-        {
-            id: 1,
-            Description: "Test#1",
-            Amount: 100,
-        },
-        {
-            id: 2,
-            Description: "Test#2",
-            Amount: -100,
-        },
-        {
-            id: 3,
-            Description: "Test#3",
-            Amount: -1000,
-        },
-        {
-            id: 4,
-            Description: "Test#4",
-            Amount: 2100,
-        },
-    ];
+    const {transactions} = useContext(TransactionContext)
 
     const transactionAmounts = transactions.map(transaction => transaction.Amount);
     const inocme = transactionAmounts.filter(amount => amount > 0).reduce((prev, curr) => prev += curr, 0).toFixed(2);
